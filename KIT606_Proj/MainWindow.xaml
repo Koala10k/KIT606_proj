@@ -1,0 +1,29 @@
+﻿<Window x:Class="KIT606_Proj.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Fast SLCA and ELCA Computation for XML Keyword Query Based on Set Intersection Operation ver1.2" Height="720" Width="1280" Left="0" Top="0" MinWidth="945" MinHeight="100" HorizontalAlignment="Center" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" Icon="NIBIRU.ico">
+    <Grid Margin="0,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="905*"/>
+            <ColumnDefinition Width="367*"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="ELCABtn" Content="ELCA" HorizontalAlignment="Right" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.564,0.933" Margin="0,10,26,0" Click="ELCABtn_Click" Height="22" Grid.Column="1" IsEnabled="False"/>
+        <Button x:Name="SLCABtn" Content="SLCA" HorizontalAlignment="Right" VerticalAlignment="Top" Width="76" RenderTransformOrigin="0.564,0.933" Margin="0,10,107,0" Click="SLCABtn_Click" Height="22" Grid.Column="1" IsEnabled="False"/>
+        <TextBox Name="filePath" Text="" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,10,10,0" IsReadOnly="True" />
+        <Button Content="Browse" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="10,10,0,0" Height="22" Click="browse_Click" Grid.Column="1"/>
+        <TextBox x:Name="qryTxt" Text="" Height="23" TextWrapping="Wrap" VerticalAlignment="Top" Margin="10,35,10,0" KeyDown="qryTxt_KeyDown"/>
+        <Button x:Name="buildCA" Content="CAs" HorizontalAlignment="Left" VerticalAlignment="Top" Width="74" Margin="10,35,0,0" Click="buildCABtn_Click" Height="22" Grid.Column="1"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" Margin="10,65,10,40" Padding="0">
+            <TextBox x:Name="txt1" TextWrapping="Wrap" Text="" Padding="1" IsReadOnly="True" />
+        </ScrollViewer>
+        <RadioButton x:Name="fwdRbn" GroupName="Direction" IsChecked="True" Content="Fwd" Margin="0,35,100,0" VerticalAlignment="Top" RenderTransformOrigin="1.105,0.5" Height="16" Checked="fwdRbn_Checked" Grid.Column="1" HorizontalAlignment="Right" Width="38"/>
+        <RadioButton x:Name="bwdRbn" GroupName="Direction" Content="Bwd" HorizontalAlignment="Right" Margin="0,35,30,0" VerticalAlignment="Top" Height="16" Width="39" Checked="bwdRbn_Checked" Grid.Column="1"/>
+        <ScrollViewer Margin="10,65,10,40" Grid.Column="1">
+            <TextBox x:Name="txt2" TextWrapping="Wrap" Text="" IsReadOnly="True" />
+        </ScrollViewer>
+        <Button Content="Clear Left" Margin="0,0,90,10" HorizontalContentAlignment="Center" HorizontalAlignment="Right" Width="75" Height="22" VerticalAlignment="Bottom" Click="CLearLeft_Click" Grid.Column="1"/>
+        <Button Content="Clear Right" Margin="0,0,10,10" HorizontalContentAlignment="Center" Height="22" VerticalAlignment="Bottom" Grid.Column="1" HorizontalAlignment="Right" Width="75" Click="CLearRight_Click"/>
+        <ProgressBar x:Name="pBar" Margin="10,0,173,10" VerticalAlignment="Bottom" Height="22" Grid.ColumnSpan="2" IsIndeterminate="False" />
+        <Label x:Name="TimeElapsed" Content="" Margin="10,0,173,10" VerticalAlignment="Bottom" Height="22" Grid.ColumnSpan="2" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Padding="5,0,5,5"/>
+    </Grid>
+</Window>
